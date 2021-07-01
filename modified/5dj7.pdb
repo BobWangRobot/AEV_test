@@ -312,7 +312,7 @@ SEQRES  17 A  230  ALA ARG VAL GLY ALA TYR TYR ASP VAL LEU MET GLU GLN
 SEQRES  18 A  230  ILE ASN ALA GLY ALA VAL SER ALA ARG                          
 FORMUL   2  HOH   *363(H2 O)                                                    
 HELIX    1 AA6 SER A  146  TYR A  154  1                                   9    
-HELIX    2 AA7 TYR A  214  ASN A  222  1                                   9    
+HELIX    2 AA7 TYR A  214  ILE A  222  1                                   9    
 SHEET    1 AA1 6 GLU A   5  ASP A   6  0                                        
 SHEET    2 AA1 6 GLN A 138  PRO A 143 -1  O  LYS A 139   N  GLU A   5           
 SHEET    3 AA1 6 ALA A 118  GLY A 123 -1  N  ALA A 119   O  VAL A 142           

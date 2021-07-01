@@ -363,12 +363,12 @@ HETSYN     HEM HEME
 FORMUL   2  HEM    C34 H32 FE N4 O4                                             
 FORMUL   3  SO4    3(O4 S 2-)                                                   
 FORMUL   6  HOH   *295(H2 O)                                                    
-HELIX    1 AA1 SER A    3  GLU A   17  1                                  15    
-HELIX    2 AA2 ASP A   22  HIS A   36  1                                  15    
-HELIX    3 AA5 SER A   59  LYS A   77  1                                  19    
-HELIX    4 AA6 HIS A   86  LYS A   96  1                                  11    
-HELIX    5 AA7 PRO A  103  HIS A  119  1                                  17    
-HELIX    6 AA8 GLY A  126  LEU A  146  1                                  21    
+HELIX    1 AA1 SER A    3  VAL A   17  1                                  15    
+HELIX    2 AA2 ALA A   22  HIS A   36  1                                  15    
+HELIX    3 AA5 GLU A   59  LYS A   77  1                                  19    
+HELIX    4 AA6 LEU A   86  LYS A   96  1                                  11    
+HELIX    5 AA7 TYR A  103  HIS A  119  1                                  17    
+HELIX    6 AA8 ASP A  126  TYR A  146  1                                  21    
 LINK         NE2 HIS A  93                FE   HEM A 201     1555   1555  2.12  
 LINK        FE   HEM A 201                 O   HOH A 365     1555   1555  2.11  
 SITE     1 AC1 23 THR A  39  LYS A  42  PHE A  43  ARG A  45                    

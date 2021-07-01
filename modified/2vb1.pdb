@@ -941,9 +941,9 @@ FORMUL   2  ACT    C2 H3 O2 1-
 FORMUL   3  EDO    3(C2 H6 O2)                                                  
 FORMUL   6  NO3    9(N O3 1-)                                                   
 FORMUL  15  HOH   *170(H2 O)                                                    
-HELIX    1   1 GLY A    5  HIS A   14  1                                  10    
-HELIX    2   2 SER A   26  ASN A   35  1                                  10    
-HELIX    3   3 ILE A   89  ASP A  100  1                                  12    
+HELIX    1   1 ARG A    5  ARG A   14  1                                  10    
+HELIX    2   2 GLY A   26  GLU A   35  1                                  10    
+HELIX    3   3 THR A   89  SER A  100  1                                  12    
 SHEET    1  AA 3 THR A  43  ARG A  45  0                                        
 SHEET    2  AA 3 THR A  51  TYR A  53 -1  O  ASP A  52   N  ASN A  44           
 SHEET    3  AA 3 ILE A  58  ASN A  59 -1  O  ILE A  58   N  TYR A  53           

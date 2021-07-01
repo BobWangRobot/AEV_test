@@ -350,12 +350,9 @@ FORMUL   2  DMS    C2 H6 O S
 FORMUL   3  TRS    C4 H12 N O3 1+                                               
 FORMUL   4  HWH    C12 H13 F N2 O                                               
 FORMUL   5  HOH   *155(H2 O)                                                    
-HELIX    1 AA1 ASP A 2794  THR A 2800  1                                   7    
-HELIX    2 AA2 THR A 2803  ALA A 2819  1                                  17    
-HELIX    4 AA4 ASP A 2837  ILE A 2842  1                                   6    
-HELIX    5 AA5 ASP A 2847  ARG A 2857  1                                  11    
-HELIX    6 AA6 LYS A 2862  ASN A 2881  1                                  20    
-HELIX    7 AA7 SER A 2885  HIS A 2911  1                                  27    
+HELIX    1 AA2 GLU A 2804  ALA A 2819  1                                  16    
+HELIX    2 AA6 LEU A 2863  TYR A 2880  1                                  18    
+HELIX    3 AA7 ALA A 2891  SER A 2910  1                                  20    
 SITE     1 AC1  5 GLN A2818  ALA A2819  HIS A2820  TRP A2824                    
 SITE     2 AC1  5 HOH A3169                                                     
 SITE     1 AC2 10 LYS A2811  ARG A2815  SER A2816  GLN A2856                    

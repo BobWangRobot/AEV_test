@@ -456,10 +456,10 @@ HETSYN     EDO ETHYLENE GLYCOL
 FORMUL   2  6RD    C28 H27 N5 O                                                 
 FORMUL   3  EDO    C2 H6 O2                                                     
 FORMUL   4  HOH   *133(H2 O)                                                    
-HELIX    1 AA1 SER A    6  ASP A   20  1                                  15    
-HELIX    2 AA2 PRO A   28  LYS A   38  1                                  11    
-HELIX    3 AA3 SER A   42  VAL A   52  1                                  11    
-HELIX    4 AA4 THR A   58  SER A   65  1                                   8    
+HELIX    1 AA1 GLU A    6  ASP A   20  1                                  15    
+HELIX    2 AA2 THR A   28  LYS A   38  1                                  11    
+HELIX    3 AA3 ALA A   42  VAL A   52  1                                  11    
+HELIX    4 AA4 LEU A   58  LEU A   65  1                                   8    
 SITE     1 AC1 18 ASN A  13  GLU A  16  ASP A  20  ARG A  22                    
 SITE     2 AC1 18 VAL A  23  HIS A  33  PHE A  34  LEU A  35                    
 SITE     3 AC1 18 SER A  37  LYS A  38  ARG A  63  HOH A 235                    

@@ -492,16 +492,16 @@ FORMUL   2  NDP    C21 H30 N7 O17 P3
 FORMUL   3  LDT    C16 H12 BR F2 N O3 S                                         
 FORMUL   4  CIT    2(C6 H8 O7)                                                  
 FORMUL   6  HOH   *613(H2 O)                                                    
-HELIX    1   1 PRO A   26  GLY A   37  1                                  12    
-HELIX    2   2 ASN A   51  GLU A   64  1                                  14    
+HELIX    1   1 GLN A   26  VAL A   37  1                                  12    
+HELIX    2   2 GLU A   51  GLU A   64  1                                  14    
 HELIX    3   3 LEU A   87  LYS A  100  1                                  14    
-HELIX    4   4 ASN A  136  GLU A  150  1                                  17    
+HELIX    4   4 ILE A  137  GLU A  150  1                                  17    
 HELIX    5   5 ASN A  162  ASN A  171  1                                  10    
 HELIX    6   6 GLN A  192  LYS A  202  1                                  11    
 HELIX    7   7 ASP A  230  ASN A  241  1                                  12    
-HELIX    8   8 THR A  243  ARG A  252  1                                  10    
+HELIX    8   8 THR A  243  PRO A  252  1                                  10    
 HELIX    9   9 THR A  265  LYS A  274  1                                  10    
-HELIX   10  10 SER A  283  SER A  290  1                                  18    
+HELIX   10  10 GLN A  283  SER A  290  1                                  18    
 SHEET    1  AA 2 ARG A   3  LEU A   5  0                                        
 SHEET    2  AA 2 LYS A  11  PRO A  13 -1  O  MET A  12   N  ILE A   4           
 SHEET    1  AB 8 LEU A  17  GLY A  18  0                                        

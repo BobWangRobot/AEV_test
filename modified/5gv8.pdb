@@ -379,10 +379,10 @@ HETSYN     GOL GLYCERIN; PROPANE-1,2,3-TRIOL
 FORMUL   2  FAD    C27 H33 N9 O15 P2                                            
 FORMUL   3  GOL    4(C3 H8 O3)                                                  
 FORMUL   7  HOH   *608(H2 O)                                                    
-HELIX    1 AA1 GLY A 1097  MET A 1103  1                                   7    
-HELIX    2 AA2 GLY A 1156  LYS A 1167  1                                  12    
-HELIX    3 AA4 LEU A 1191  SER A 1199  1                                   9    
-HELIX    4 AA8 CYS A 1255  GLY A 1262  1                                   8    
+HELIX    1 AA1 LYS A 1097  GLU A 1103  1                                   7    
+HELIX    2 AA2 THR A 1156  LYS A 1167  1                                  12    
+HELIX    3 AA4 PRO A 1191  GLU A 1199  1                                   9    
+HELIX    4 AA8 CYS A 1255  VAL A 1262  1                                   8    
 SHEET    1 AA1 6 ASN A1059  TYR A1065  0                                        
 SHEET    2 AA1 6 HIS A1049  ILE A1056 -1  N  ILE A1056   O  ASN A1059           
 SHEET    3 AA1 6 THR A1110  ASN A1117 -1  O  ASN A1117   N  HIS A1049           

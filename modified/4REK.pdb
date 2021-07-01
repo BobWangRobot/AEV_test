@@ -385,16 +385,16 @@ HETNAM     PO4 PHOSPHATE ION
 FORMUL   2  FAD    C27 H33 N9 O15 P2                                            
 FORMUL   3  PO4    O4 P 3-                                                      
 FORMUL   4  HOH   *897(H2 O)                                                    
-HELIX    1   1 GLY A   20  ALA A   33  1                                  14    
+HELIX    1   1 TYR A   20  GLY A   33  1                                  14    
 HELIX    2   2 LYS A  127  LEU A  135  1                                   9    
 HELIX    3   3 ARG A  146  LEU A  155  1                                  10    
 HELIX    4   4 ASP A  161  THR A  168  1                                   8    
-HELIX    5   5 TYR A  171  ALA A  183  1                                  13    
+HELIX    5   5 TYR A  171  LYS A  183  1                                  13    
 HELIX    6   6 ASP A  196  ALA A  205  1                                  10    
 HELIX    7   7 THR A  231  THR A  239  1                                   9    
-HELIX    8   8 ALA A  292  THR A  304  1                                  13    
-HELIX    9   9 ASN A  406  GLY A  424  1                                  19    
-HELIX   10  10 PRO A  486  VAL A  503  1                                  18    
+HELIX    8   8 LEU A  292  THR A  304  1                                  13    
+HELIX    9   9 ASN A  406  ASN A  424  1                                  19    
+HELIX   10  10 PRO A  486  LYS A  503  1                                  18    
 SHEET    1   A 6 VAL A 242  THR A 246  0                                        
 SHEET    2   A 6 THR A  36  GLU A  40  1  N  MET A  38   O  THR A 243           
 SHEET    3   A 6 TYR A  10  ILE A  16  1  N  VAL A  15   O  LEU A  37           
