@@ -2,6 +2,7 @@ from __future__ import absolute_import, division, print_function
 import math
 import copy
 import mmtbx.model
+import mmtbx.model
 from numpy import NaN
 from libtbx.utils import null_out
 from collections import OrderedDict
@@ -10,9 +11,9 @@ from mmtbx.conformation_dependent_library import generate_protein_fragments
 from mmtbx.secondary_structure.build import ss_idealization as ssb
 
 def format_HELIX_records_from_AEV(aev_values_dict, cut_num=None):
-  threshold1 = [0.9, 4]
+  threshold1 = [0.98, 6]
   helix_num = 1
-  helix_list = [[], [], [], []]
+  helix_list = []
   result = []
   check_num = 0
   if cut_num == None:
@@ -33,58 +34,39 @@ def format_HELIX_records_from_AEV(aev_values_dict, cut_num=None):
         list1[i - 1] = 1
     return list1
   #This is select rules.This function judges if this atom is a B,M or E?
-  def select(value, cut, residue, judge_list):
-    #Is this atom a B?
-    if value['B']>value['M'] and value['B']>value['E'] and value['B']>cut:
-      if judge_list[0]==[]:
-        judge_list[0] = residue
-      elif judge_list[1]!=[] and judge_list[2]!=[] and judge_list[3]==[]:
-        judge_list[3] = residue
-        judge_list[1] = residue
-    # Is this atom a M
-    elif value['M']>value['E'] and value['M']>cut:
-      if judge_list[0]!=[]:
-        judge_list[1] = residue
-      elif judge_list[1]!=[] and judge_list[2]!=[] and judge_list[3]==[]:
-        judge_list[3] = residue
-    # Is this atom a E?
-    elif value['E']>value['B'] and value['E']>value['M'] and value['E']>cut:
-      if judge_list[0]!=[] and judge_list[1]!=[] :
-        judge_list[2] = residue
-    else:
-      if judge_list[0]!=[] and judge_list[1]!=[] and judge_list[2]!=[]:
-        judge_list[3] = residue
-      else:
-        #reset
-        judge_list = [[], [], [], []]
-    return judge_list
-  #Judge all atoms
+  print(aev_values_dict)
   for key, value in aev_values_dict.items():
+    # helices records input
     if check_num == 0:
       if check_num + 1 != key.split()[-1]:
         check_num = int(key.split()[-1])
       else:
         check_num = 1
-    helix_list = select(value, cut_num[0], key, helix_list)
-    # helices records input
-    if not [] in helix_list:
-      length = int(helix_list[2].split()[-1]) - int(helix_list[0].split()[-1]) + 1
-      if length > cut_num[1]:
-        if helix_list[1]==helix_list[3]:
-          num1 = helix_list[0].split()
-          num2 = helix_list[2].split()
-          input_list = add_helix(num1, num2, input_list, check_num)
-          fmt = "HELIX   {0:>2}  {0:>2} {1:>}  {2:>}   {3:>36}"
-          result.append(fmt.format(helix_num, helix_list[0], helix_list[2], length))
-          start = copy.copy(helix_list[3])
-          helix_list = [start, [], [], []]
-        else:
-          num1 = helix_list[0].split()
-          num2 = helix_list[2].split()
-          input_list = add_helix(num1, num2, input_list, check_num)
-          fmt = "HELIX   {0:>2}  {0:>2} {1:>}  {2:>}   {3:>36}"
-          result.append(fmt.format(helix_num, helix_list[0], helix_list[2], length))
-          helix_list = [[], [], [], []]
+    helix_list.append(key)
+    if len(helix_list) < cut_num[1]:
+      # value['M']
+      if value['M'] < cut_num[0] and value['M'] != NaN:
+        helix_list = [helix_list[-1]]
+      elif value['M'] is NaN:
+        helix_list = [helix_list[-1]]
+    else:
+      if value['M'] < cut_num[0]:
+        length = int(helix_list[-1].split()[-1]) - int(helix_list[0].split()[-1]) + 1
+        num1 = helix_list[0].split()
+        num2 = helix_list[-1].split()
+        input_list = add_helix(num1, num2, input_list, check_num)
+        fmt = "HELIX   {0:>2}  {0:>2} {1:>}  {2:>}   {3:>36}"
+        result.append(fmt.format(helix_num, helix_list[0], helix_list[-1], length))
+        helix_list = []
+        helix_num += 1
+      if value['M'] is NaN:
+        length = int(helix_list[-1].split()[-1]) - int(helix_list[0].split()[-1]) + 1
+        num1 = helix_list[0].split()
+        num2 = helix_list[-1].split()
+        input_list = add_helix(num1, num2, input_list, check_num)
+        fmt = "HELIX   {0:>2}  {0:>2} {1:>}  {2:>}   {3:>36}"
+        result.append(fmt.format(helix_num, helix_list[0], helix_list[-1], length))
+        helix_list = []
         helix_num += 1
   print('\n'.join(result))
   return input_list
@@ -159,10 +141,16 @@ def compare(aev_values_dict):
     elif key == 'E': set_vals(result=result, d=aev_values_dict.EAEVs)
   for key1, value1 in result.items():
     sum = 0
-    for num in value1.values():
+    for key, num in value1.items():
+      if key == 'B':
+        num = 0.25 * num
+      elif key == 'M':
+        num = 0.95 * num
+      elif key == 'E':
+        num = 0.25 * num
       if num != NaN:
         sum += num
-    result[key1]['all'] = sum
+    result[key1]['Total'] = sum
   return result
 
 # It is format calss of corelation coefficient values.
@@ -204,14 +192,14 @@ class AEV(object):
   """
   def __init__( self,
                 model,
-                rs_values = [2.0, 3.8, 5.2, 5.5, 6.2, 7.0, 8.6, 10.0],
+                rs_values = (2.0, 3.8, 5.2, 5.5, 6.2, 7.0, 8.6, 10.0),
                 # probe distances (A) for radial
                 radial_eta = 4,
                 cutoff = 8.1,
                 # radial cutoff distance
-                ts_values = [0.392699, 1.178097, 1.963495, 2.748894],
+                ts_values = (0.392699, 1.178097, 1.963495, 2.748894),
                 # probe angles (rad) for angular
-                angular_rs_values = [3.8, 5.2, 5.5, 6.2],
+                angular_rs_values = (3.8, 5.2, 5.5, 6.2),
                 # probe distances (A) for angular
                 angular_eta = 4,
                 angular_zeta = 8,

@@ -365,6 +365,8 @@ FORMUL   3  SO4    3(O4 S 2-)
 FORMUL   6  HOH   *295(H2 O)                                                    
 HELIX    1 AA1 SER A    3  VAL A   17  1                                  15    
 HELIX    2 AA2 ALA A   22  HIS A   36  1                                  15    
+HELIX    2 AA2 HIS A   36  LYS A   42  1                                   7    
+HELIX    2 AA2 THR A   51  ALA A   57  1                                   7    
 HELIX    3 AA5 GLU A   59  LYS A   77  1                                  19    
 HELIX    4 AA6 LEU A   86  LYS A   96  1                                  11    
 HELIX    5 AA7 TYR A  103  HIS A  119  1                                  17    

@@ -351,6 +351,7 @@ FORMUL   3  TRS    C4 H12 N O3 1+
 FORMUL   4  HWH    C12 H13 F N2 O                                               
 FORMUL   5  HOH   *155(H2 O)                                                    
 HELIX    1 AA2 GLU A 2804  ALA A 2819  1                                  16    
+HELIX    2 AA6 ASP A 2847  ARG A 2857  1                                  11    
 HELIX    2 AA6 LEU A 2863  TYR A 2880  1                                  18    
 HELIX    3 AA7 ALA A 2891  SER A 2910  1                                  20    
 SITE     1 AC1  5 GLN A2818  ALA A2819  HIS A2820  TRP A2824                    
