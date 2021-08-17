@@ -73,7 +73,7 @@ def run():
   AEV_method = []
   pdb_name = []
   t0 = time.time()
-  path = '/home/bob/datagenerate/test11/modified'
+  path = 'modified'
   for root, dirs, files in os.walk(path):
     for file in files:
       print(file)
@@ -91,7 +91,7 @@ def run():
     plt.bar(x + 0.1, AEV_method, 0.2, color='pink', label='New_method')
     plt.xticks(x, pdb_name)
     plt.legend()
-    plt.savefig('/home/bob/datagenerate/test12/%s.png' % fig_title)
+    # plt.savefig('/home/bob/datagenerate/test12/%s.png' % fig_title)
     plt.show()
     plt.clf()
     print('time', time.time() - t0)
